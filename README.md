@@ -24,17 +24,17 @@ For example,  test the cdnet(pretrained) on Market1501, modify the "./configs/in
 
 ```yaml
 MODEL:
-	NAME: 'cdnet'
-	GENOTYPE: "cdnet_sample_top2_best_genotype.json"
+    NAME: 'cdnet'
+    GENOTYPE: "cdnet_sample_top2_best_genotype.json"
 DATA:
-	DATASET: 'market1501'
-	DATASET_DIR: "/home/share/solicucu/data/" # path to the dataset DATASET
-	IMAGE_SIZE: [256,128]
+    DATASET: 'market1501'
+    DATASET_DIR: "/home/share/solicucu/data/" # path to the dataset DATASET
+    IMAGE_SIZE: [256,128]
 OUTPUT:
     DIRS: "/home/share/solicucu/data/ReID/FasterReID/inference/"
     CKPT_DIRS: "market1501/" # DIRS + CKPT_DIRS is path to the checkpoint 
 TEST:
-	BEST_CKPT: "cdnet_top2_pretrained.pth" # name of the specified checkpoint
+    BEST_CKPT: "cdnet_top2_pretrained.pth" # name of the specified checkpoint
 ```
 
 Then run the file "./run/inference.sh".
