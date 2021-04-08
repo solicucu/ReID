@@ -1,4 +1,4 @@
-## Combined Depth Space Based Architecture Search for Person Re-identification
+## Combined Depth Space based Architecture Search for Person Re-identification
 
 ### Models
 
@@ -63,7 +63,7 @@ Note that this file can be used for the evaluation of both ReID task and classif
 
   ```yaml
   DATA:
-  	DATASET: 'market1501'
+    DATASET: 'market1501'
   OUTPUT:
     DIRS: "/home/share/solicucu/data/ReID/FasterReID/market1501/cdnet/"
     CKPT_DIRS: "checkpoints/cdnet_top2_fblneck/"
@@ -86,28 +86,28 @@ Note that this file can be used for the evaluation of both ReID task and classif
 
   ```yaml
   MODEL:
-  	NAME: 'cdnet'
-  	IMAGENET_CKPT: 'path/to/pretained_chekcpoint'
-  	GENOTYPE: "cdnet_sample_top2_best_genotype.json"
+    NAME: 'cdnet'
+    IMAGENET_CKPT: 'path/to/pretained_chekcpoint'
+    GENOTYPE: "cdnet_sample_top2_best_genotype.json"
   DATA:
-  	DATASET: 'market1501'
+    DATASET: 'market1501'
   SOLVER:
-    	MAX_EPOCHS: 350
-    	BASE_LR: 6.5e-2
-    	LR_LIST: [6.5e-2, 6.5e-3, 6.5e-4, 6.5e-5]
+    MAX_EPOCHS: 350
+    BASE_LR: 6.5e-2
+    LR_LIST: [6.5e-2, 6.5e-3, 6.5e-4, 6.5e-5]
   OUTPUT:
-      DIRS: "/home/share/solicucu/data/ReID/FasterReID/market1501/cdnet/"
-      CKPT_DIRS: "checkpoints/cdnet_top2_fblneck_pretrained/"
-      LOG_NAME: 'log_cdnet_top2_fblneck_pretrained.txt'
+    DIRS: "/home/share/solicucu/data/ReID/FasterReID/market1501/cdnet/"
+    CKPT_DIRS: "checkpoints/cdnet_top2_fblneck_pretrained/"
+    LOG_NAME: 'log_cdnet_top2_fblneck_pretrained.txt'
   ```
 
   Specially, there are a little adjustment for msmt17 as follows.
 
   ```yaml
   SOLVER:
-    	MAX_EPOCHS: 240
-    	BASE_LR: 4.5e-2
-    	LR_LIST: [4.5e-2, 4.5e-3, 4.5e-4, 4.5e-5]
+    MAX_EPOCHS: 240
+    BASE_LR: 4.5e-2
+    LR_LIST: [4.5e-2, 4.5e-3, 4.5e-4, 4.5e-5]
   ```
 
   Other modifications can be made according the need. 
