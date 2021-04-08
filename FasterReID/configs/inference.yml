@@ -1,0 +1,61 @@
+MODEL:
+  DEVICE: 'cpu'
+  NAME: 'cdnet'
+  # NAME: 'cnet'
+  PRETRAIN_PATH: ''
+  IMAGENET_CKPT: ''
+  PARALLEL: False
+  WIDTH_MULT: 1.
+  STAGES: [2, 2, 2]
+  PLANES: [64, 256, 384, 512]
+  GENOTYPE: "cdnet_sample_top2_best_genotype.json"
+  # GENOTYPE: "cnet_sample_top2_best_genotype.json"
+  NECK_TYPE: "fblneck"
+  # NECK_TYPE: "none"
+  USE_BNNECK: False
+  ADAPTION_FUSION: True
+  FC_DIMS: [512]
+
+DATA:
+  DATASET: 'market1501'
+  # DATASET: 'dukemtmc'
+  # DATASET: 'msmt17'
+  # DATASET: 'imagenet'
+  # DATASET: 'cifar100_combine'
+  DATASET_DIR: "/home/share/solicucu/data/"
+  # DATASET_DIR: "/home/share/solicucu/data/imagenet/train_val/"
+  # DATASET_DIR: "/home/share/solicucu/data/CIFAR/"
+  IMAGE_SIZE: [256,128]
+  # IMAGE_SIZE: [224, 224]
+  # IMAGE_SIZE: [32, 32]
+  HF_PROB: 0.5
+  RE_PROB: 0.5
+  MEAN: [0.485, 0.456, 0.406]
+  STD: [0.229, 0.224, 0.225]
+  PADDING: 10
+
+DATALOADER:
+  NUM_WORKERS: 8
+  SAMPLER: 'triplet'
+  NUM_INSTANCE: 4
+
+SOLVER:
+  # BATCH_SIZE: 256
+  BATCH_SIZE: 128
+
+OUTPUT:
+  DIRS: "/home/share/solicucu/data/ReID/FasterReID/inference/"
+  CKPT_DIRS: "market1501/"
+  # CKPT_DIRS: "dukemtmc/"
+  # CKPT_DIRS: "msmt17/"
+  # CKPT_DIRS: "classification/"
+  LOG_NAME: "log_inference_cdnet_top2_market1501_prtrained.txt"
+
+TEST:
+  FEAT_NORM: 'yes'
+  BEST_CKPT: "cdnet_top2_pretrained.pth"
+  # BEST_CKPT: "cdnet_top2_scratch.pth"
+  # BEST_CKPT: "cnet_top2_scratch.pth"
+  # BEST_CKPT: "imagenet_cdnet_top2.pth"
+  # BEST_CKPT: "cifar100_cdnet_top2.pth"
+
