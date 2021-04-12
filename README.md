@@ -1,5 +1,6 @@
 ## Combined Depth Space based Architecture Search for Person Re-identification
-
+### Paper
+[Combined Depth Space based Architecture Search for Person Re-identification](https://arxiv.org/abs/2104.04163)
 ### Models
 
 - results on ReID tasks
